@@ -11,8 +11,8 @@ import managmentRotes from './routes/managment.js'
 import salesRoutes from './routes/sales.js'
 
 //data import
-import User from './models/user.js'
-import { dataUser } from './data/index'
+// import User from './models/user.js'
+// import { dataUser } from './data/index'
 
 // configuration
 dotenv.config()
@@ -34,9 +34,9 @@ app.use('/sales', salesRoutes)
 
 //mongoose SETUP
 
-const PORT = process.env.PORT || 9001
+const PORT = 4200
 mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect('mongodb://localhost:27017', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -45,7 +45,8 @@ mongoose
             console.log(`Server started on ${PORT}`)
         })
 
-        User.insertMany(dataUser)
+        /**ADD ONLY ine time */
+        // User.insertMany(dataUser)
     })
     .catch((error) => console.log(`Not connected`, error))
 console.log(process.env.PORT)
