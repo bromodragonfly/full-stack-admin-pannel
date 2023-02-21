@@ -4,7 +4,6 @@ import {
     DarkModeOutlined,
     Menu as MenuIcon,
     SettingsOutlined,
-    ArrowDropDownCircleOutlined,
     Search,
     ArrowDropDownOutlined,
 } from '@mui/icons-material'
@@ -14,7 +13,6 @@ import { setMode } from 'state'
 import profileImage from 'assets/profile.jpeg'
 import {
     AppBar,
-    Avatar,
     Button,
     IconButton,
     InputBase,
