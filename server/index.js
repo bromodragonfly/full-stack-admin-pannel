@@ -11,8 +11,10 @@ import managmentRotes from './routes/managment.js'
 import salesRoutes from './routes/sales.js'
 
 //data import
-// import User from './models/user.js'
-// import { dataUser } from './data/index'
+import User from './models/user.js'
+import Product from './models/Products.js'
+import ProductStat from './models/ProductStats.js'
+import { dataUser, dataProduct, dataProductStat } from './data/index'
 
 // configuration
 dotenv.config()
@@ -45,7 +47,9 @@ mongoose
             console.log(`Server started on ${PORT}`)
         })
 
-        /**ADD ONLY ine time */
+        /** ADD ONLY one time */
+        // Product.insertMany(dataProduct)
+        // ProductStat.insertMany(dataProductStat)
         // User.insertMany(dataUser)
     })
     .catch((error) => console.log(`Not connected`, error))
